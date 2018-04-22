@@ -1,6 +1,6 @@
 import blockies from 'ethereum-blockies-png'
 import superagent from 'superagent'
-import { serverConfig } from '@/config'
+import { serverConfig } from './config'
 import arrayBufferDataUri from './arraybuffer'
 
 const getBlockie = address => blockies.createDataURL({ seed: address, scale: 32 })
@@ -10,8 +10,7 @@ const avatarUrl = _address => {
     return `${server}/${bucket}/${_address.toLowerCase()}?t=${timeStamp}`
 }
 
-
-export async function getAvatar(_address) {
+async function getAvatar(_address) {
     const url = avatarUrl(_address.toLowerCase())
     var imageUrl
     try {
@@ -25,3 +24,5 @@ export async function getAvatar(_address) {
     }
     return imageUrl
 }
+
+export default getAvatar
