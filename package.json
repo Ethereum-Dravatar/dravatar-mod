@@ -1,6 +1,6 @@
 {
   "name": "dravatar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Avatar for Ethereum Wallet",
   "main": "index.js",
   "scripts": {
